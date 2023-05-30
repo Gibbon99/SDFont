@@ -9,10 +9,8 @@
 #include <map>
 #include <math.h>
 #include <ft2build.h>
-#include <gd.h>
 
 #include FT_FREETYPE_H
-
 using namespace std;
 
 /** @file free_type_utilities.hpp

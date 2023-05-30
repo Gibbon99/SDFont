@@ -2,10 +2,8 @@
 #include <fstream>
 #include <sstream>
 #include <math.h>
-
-#ifdef USE_LIBPNG
 #include <png.h>
-#endif
+
 
 #include "generator.hpp"
 
@@ -282,6 +280,8 @@ bool Generator::generateGlyphBitmaps( long numItemsPerRow )
     long numFontsProcessed = 1;
 
     for ( auto& g : mGlyphs ) {
+
+	    std::cout << "Generating glyph [ " << g.codePoint() << " ]" << std::endl;
 
         auto ind = FT_Get_Char_Index( mFtFace, g.codePoint() );
 
@@ -594,4 +594,3 @@ void Generator::generateMetrics(float& margin, vector<Glyph>& glyphs)
 
 
 } // namespace SDFont
-
